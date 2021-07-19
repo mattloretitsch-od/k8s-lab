@@ -1,0 +1,13 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: ghost-ingress
+spec:
+  rules:
+    - host: ghost.c0l0.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: ghost-service
+              servicePort: 80
